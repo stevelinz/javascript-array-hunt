@@ -94,17 +94,37 @@ $(document).ready(function () {
         Output them to td#firstLast
          */
 
+        var first = myArray[0];
+        var count =  myArray.length;
+        var last = myArray[count - 1];
+
+        $("td#firstLast").text(first + " " + last);
+
 
         /*
         Find the first string that contains an 'n'.
         Output it to td#firstEnn
          */
 
+        var first = myArray[0];
+
+        $("td#firstEnn").text(first.indexOf('n'));
 
         /*
         Find all of the strings with less than 6 characters.
         Output them to td#lessThanSix
          */
+        var count =  myArray.length;
+
+        var result;
+        for (let i = 0; i < count; i++) {
+
+            if(myArray.length < 7) {
+
+                $("td#lessThanSix").text(result);
+            }
+        }
+
 
 
         /*
@@ -112,11 +132,30 @@ $(document).ready(function () {
         Output it to td#longName
          */
 
+         var arr;
+
+        var longest;
+        for (let i = 0; i < myArray.length; i++) {
+           if (myArray[i]>myArray[i-1])
+              longest =  myArray;
+        }
+
+
+        $("td#longName").text(longest);
+
 
         /*
         Find all of the strings that do not contain the letter 's'.
         Output them to td#noEss
          */
+
+        var find;
+        if(myArray.indexOf("s") !== -1){
+
+        }else{
+
+            $("td#noEss").text(find);
+        }
 
 
         /*
@@ -125,10 +164,18 @@ $(document).ready(function () {
          */
 
 
+
+
         /*
         Output all of the strings in reverse order and separated by
         ' - ' to td#reverseDash
          */
+
+        var words = myArray.split("-");
+
+        words.reverse();
+
+        $("td#reverseDash").text(words);
 
 
     }
